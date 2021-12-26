@@ -8,10 +8,10 @@
       <textarea cols="30" rows="10" v-model="token"></textarea>
     </div>
     <div v-show="token">
-      <button @click="getUserInformation">获取用户信息</button>
-      <p>获取的用户信息如下</p>
-      <textarea cols="30" rows="10" v-model="userInformation.id">
-      </textarea>
+      <div>
+        <button @click="getUserInformation">获取用户头像</button>
+      </div>
+      <img :src="userInformation.avatar" alt="">
     </div>
   </div>
 </template>

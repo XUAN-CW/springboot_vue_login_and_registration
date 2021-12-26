@@ -47,6 +47,11 @@ public class User implements Serializable {
     private String mail;
 
     /**
+     * 头像
+     */
+    private String avatar;
+
+    /**
      * 创建时间
      */
     private LocalDateTime gmtCreate;
@@ -55,7 +60,6 @@ public class User implements Serializable {
      * 修改时间
      */
     private LocalDateTime gmtModified;
-
 
     public String getId() {
         return id;
@@ -97,6 +101,14 @@ public class User implements Serializable {
         this.mail = mail;
     }
 
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
     public LocalDateTime getGmtCreate() {
         return gmtCreate;
     }
@@ -116,13 +128,14 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-        "id=" + id +
-        ", username=" + username +
-        ", password=" + password +
-        ", mobile=" + mobile +
-        ", mail=" + mail +
-        ", gmtCreate=" + gmtCreate +
-        ", gmtModified=" + gmtModified +
-        "}";
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", mail='" + mail + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", gmtCreate=" + gmtCreate +
+                ", gmtModified=" + gmtModified +
+                '}';
     }
 }
