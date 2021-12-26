@@ -32,7 +32,9 @@ export default {
 
   created(){
     this.token = Cookies.get('token')
-    this.getUserInformation()
+    if(null != this.token){
+      this.getUserInformation()
+    }
   },
 
   methods: {
