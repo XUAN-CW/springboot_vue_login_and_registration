@@ -30,6 +30,10 @@ export default {
     }
   },
 
+  created(){
+    this.token = Cookies.get('token')
+  },
+
   methods: {
     login(){
       loginApi.login(this.username,this.password)
