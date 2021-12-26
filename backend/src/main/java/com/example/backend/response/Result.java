@@ -26,6 +26,10 @@ public class Result<T> {
         return new Result<>(StatusCode.ERROR);
     }
 
+    public static <T> Result<T> error(StatusCode statusCode){
+        return new Result<>(statusCode);
+    }
+
     public static <T> Result<T> error(String massage){
         Result<T> result = new Result<>(StatusCode.ERROR);
         result.message = massage;

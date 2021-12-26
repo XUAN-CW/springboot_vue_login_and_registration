@@ -9,9 +9,9 @@ package com.example.backend.response;
  *     <li> 200(HTTP 请求成功状态码) -> 20000(我的请求成功状态码)
  * </ul>
  *
- *
  * @author 禤成伟
  * @date 2021-12-24 23:38
+ * @see <a href="https://baike.baidu.com/item/HTTP/243074?fr=aladdin">HTTP</a>
  */
 public enum StatusCode {
 
@@ -26,9 +26,9 @@ public enum StatusCode {
     UNAUTHORIZED(40100,"当前请求需要用户验证"),
 
     /**
-     * 未登录
+     * 登录失败
      */
-    NOT_LOGGED_IN(40101,"未登录"),
+    LOGGED_FAILURE(40101,"登录失败"),
 
     /**
      * 懒得定义那么多错误就用这个

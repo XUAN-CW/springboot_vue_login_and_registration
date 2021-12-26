@@ -3,6 +3,7 @@ package com.example.backend.controller;
 
 import com.example.backend.entity.User;
 import com.example.backend.response.Result;
+import com.example.backend.response.StatusCode;
 import com.example.backend.service.UserService;
 import com.example.backend.utils.JwtUtils;
 import org.springframework.web.bind.annotation.*;
@@ -31,10 +32,20 @@ public class UserController {
         if(JwtUtils.isSigned(tokenOrMassage)){
             return Result.ok(tokenOrMassage);
         }else {
-            return Result.error(tokenOrMassage);
+            return Result.error(StatusCode.LOGGED_FAILURE);
         }
     }
-    
+
+
+    @GetMapping("getUserInformation")
+    public Result<User> getUserInformation(@RequestHeader("token") String token){
+        //这里先不考虑 token 过期问题,关于 token 的问题全部交给网关解决
+        String uid = JwtUtils.getIdByJwtToken(token);
+        User user = userService.getById(uid);
+        return Result.ok(user);
+    }
+
+
 
 }
 

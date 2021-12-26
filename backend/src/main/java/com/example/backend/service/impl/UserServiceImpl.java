@@ -33,4 +33,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
         return JwtUtils.getJwtToken(member.getId(),member.getUsername());
     }
+
+    @Override
+    public User getUserInformation(String token) {
+        return null;
+    }
 }

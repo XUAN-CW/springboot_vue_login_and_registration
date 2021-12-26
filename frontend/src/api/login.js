@@ -10,3 +10,10 @@ export function login(username, password) {
     }
   })
 }
+
+export function getUserInformation() {
+  return request({
+    url: '/backend/user/getUserInformation',
+    method: 'get'
+  })
+}

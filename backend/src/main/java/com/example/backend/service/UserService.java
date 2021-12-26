@@ -19,4 +19,11 @@ public interface UserService extends IService<User> {
      * @return 登录成功则返回 token ,登录失败则返回失败原因
      */
     String loginByPassword(User user);
+
+    /**
+     * 获取用户信息
+     * @param token 用户 token
+     * @return 用户信息
+     */
+    Object getUserInformation(String token);
 }
