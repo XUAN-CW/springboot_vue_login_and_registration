@@ -32,6 +32,7 @@ export default {
 
   created(){
     this.token = Cookies.get('token')
+    this.getUserInformation()
   },
 
   methods: {
